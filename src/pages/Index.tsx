@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import heroBg from "@/assets/hero-bg.jpg";
 import logo from "@/assets/logo.jpeg";
+import banner from "@/assets/banner.jpeg";
 import { useRef } from "react";
 
 const fadeUp = {
@@ -233,6 +234,24 @@ const Index = () => {
             />
           </motion.div>
         </motion.div>
+      </section>
+
+      {/* ── BANNER ── */}
+      <section className="py-16 bg-card">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <img
+              src={banner}
+              alt="Coetzee Web Solutions — Professional Websites for Local Businesses"
+              className="w-full max-w-5xl mx-auto rounded-2xl shadow-2xl shadow-primary/10 border border-border"
+            />
+          </motion.div>
+        </div>
       </section>
 
       {/* ── ABOUT INTRO ── */}
