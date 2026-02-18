@@ -92,4 +92,32 @@
   .section-padding {
     @apply py-20 px-4 md:px-8 lg:px-16;
   }
+
+  .gold-glow {
+    box-shadow: 0 0 60px -15px hsl(42, 80%, 55%, 0.3), 0 0 120px -30px hsl(42, 80%, 55%, 0.15);
+  }
+
+  .gold-glow-sm {
+    box-shadow: 0 0 30px -8px hsl(42, 80%, 55%, 0.25);
+  }
+
+  .text-shadow-gold {
+    text-shadow: 0 0 40px hsl(42, 80%, 55%, 0.3);
+  }
+
+  .grid-pattern {
+    background-image: linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
+                       linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .diagonal-lines {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 10px,
+      hsl(var(--border) / 0.15) 10px,
+      hsl(var(--border) / 0.15) 11px
+    );
+  }
 }
