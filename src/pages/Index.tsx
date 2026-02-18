@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Monitor, Paintbrush, Smartphone, TrendingUp, Shield, Zap, CheckCircle2, Star, Quote, MessageSquare, ExternalLink } from "lucide-react";
+import { ArrowRight, Monitor, Paintbrush, Smartphone, TrendingUp, Shield, Zap, CheckCircle2, Star, Quote, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -70,11 +70,7 @@ const testimonials = [
   },
 ];
 
-const portfolioPreview = [
-  { title: "Free Rein Projects", url: "https://free-rein-projects.netlify.app" },
-  { title: "Roots Fest Demo", url: "https://roots-fest-demo.netlify.app" },
-  { title: "Goddess Interior", url: "https://goddess-interior.netlify.app" },
-];
+
 
 // Floating particle component
 const FloatingParticle = ({ delay, x, y, size }: { delay: number; x: string; y: string; size: number }) => (
@@ -440,79 +436,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ── PORTFOLIO PREVIEW ── */}
-      <section className="section-padding bg-background relative overflow-hidden">
-        <div className="container mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <motion.span variants={fadeUp} custom={0} className="text-xs font-bold tracking-[0.25em] uppercase text-primary mb-5 block">
-              Recent Work
-            </motion.span>
-            <motion.h2 variants={fadeUp} custom={1} className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-5">
-              Featured <span className="text-gold-gradient">Projects</span>
-            </motion.h2>
-            <motion.div variants={fadeUp} custom={1} className="w-16 h-1 bg-gold-gradient rounded-full mx-auto mb-5" />
-            <motion.p variants={fadeUp} custom={2} className="text-muted-foreground max-w-xl mx-auto text-base md:text-lg">
-              A glimpse at some of the websites we've built for our clients.
-            </motion.p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-            {portfolioPreview.map((project, i) => (
-              <motion.a
-                key={project.title}
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={scaleIn}
-                custom={i}
-                className="group relative rounded-2xl border border-border overflow-hidden bg-card hover:border-primary/40 transition-all duration-500 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 block"
-              >
-                {/* iframe preview */}
-                <div className="relative w-full aspect-[16/10] overflow-hidden bg-muted">
-                  <iframe
-                    src={project.url}
-                    title={project.title}
-                    className="w-[1280px] h-[800px] origin-top-left pointer-events-none"
-                    style={{ transform: "scale(0.5)", transformOrigin: "top left" }}
-                    loading="lazy"
-                    sandbox="allow-scripts allow-same-origin"
-                  />
-                  {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="flex items-center gap-2 text-primary font-medium text-sm">
-                      <ExternalLink size={16} />
-                      Visit Site
-                    </div>
-                  </div>
-                </div>
-                <div className="p-5 flex items-center justify-between">
-                  <h3 className="font-heading text-base font-semibold">{project.title}</h3>
-                  <ArrowRight className="text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" size={16} />
-                </div>
-              </motion.a>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mt-14"
-          >
-            <Button variant="goldOutline" size="lg" asChild>
-              <Link to="/portfolio">View Full Portfolio <ArrowRight className="ml-2" size={16} /></Link>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
 
       {/* ── TESTIMONIALS ── */}
       <section className="section-padding bg-card relative overflow-hidden">
