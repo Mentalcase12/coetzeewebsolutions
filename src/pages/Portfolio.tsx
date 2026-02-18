@@ -15,28 +15,20 @@ const fadeUp = {
 
 const projects = [
   {
-    title: "Local Restaurant Website",
-    category: "Custom Development",
-    desc: "Built a modern, mobile-responsive website for a local restaurant including online menu, reservation system integration, and location map. Resulted in a significant increase in online reservations.",
-    color: "from-primary/20 to-accent/10",
+    title: "Free Rein Projects",
+    url: "https://free-rein-projects.netlify.app",
   },
   {
-    title: "Small Business Portfolio",
-    category: "Website Redesign",
-    desc: "Complete redesign of an outdated business website. Modernized the layout, improved navigation, and optimized for mobile. The client reported increased enquiries within the first month.",
-    color: "from-accent/20 to-primary/10",
+    title: "Roots Fest Demo",
+    url: "https://roots-fest-demo.netlify.app",
   },
   {
-    title: "Service Company Landing Page",
-    category: "Business Optimization",
-    desc: "Created a high-converting landing page focused on lead generation. Implemented clear calls-to-action, trust signals, and an optimized contact flow that doubled the client's monthly leads.",
-    color: "from-primary/20 to-accent/10",
+    title: "Goddess Interior",
+    url: "https://goddess-interior.netlify.app",
   },
   {
-    title: "E-Commerce Starter Site",
-    category: "Custom Development",
-    desc: "Developed a clean, professional online store for a startup business. Focused on product presentation, mobile shopping experience, and easy checkout process.",
-    color: "from-accent/20 to-primary/10",
+    title: "BGJ Projects",
+    url: "https://bgj-projects.lovable.app",
   },
 ];
 
@@ -66,31 +58,37 @@ const Portfolio = () => {
 
       {/* Projects */}
       <section className="section-padding bg-background">
-        <div className="container mx-auto max-w-5xl">
+        <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((p, i) => (
-              <motion.div
+              <motion.a
                 key={p.title}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeUp}
                 custom={i}
-                className="glass-card rounded-lg overflow-hidden hover:border-primary/50 transition-colors group"
+                className="glass-card rounded-lg overflow-hidden hover:border-primary/50 transition-all group block"
               >
-                {/* Placeholder visual */}
-                <div className={`h-48 bg-gradient-to-br ${p.color} flex items-center justify-center`}>
-                  <div className="text-center">
-                    <ExternalLink className="text-primary mx-auto mb-2" size={32} />
-                    <span className="text-xs text-muted-foreground">Project Preview</span>
-                  </div>
+                {/* Live site preview */}
+                <div className="relative w-full aspect-[16/10] overflow-hidden bg-muted">
+                  <iframe
+                    src={p.url}
+                    title={p.title}
+                    className="w-[1280px] h-[800px] origin-top-left pointer-events-none"
+                    style={{ transform: "scale(0.5)", transformOrigin: "top left" }}
+                    loading="lazy"
+                    sandbox="allow-scripts allow-same-origin"
+                  />
                 </div>
-                <div className="p-6">
-                  <span className="text-xs font-medium text-primary uppercase tracking-wider">{p.category}</span>
-                  <h3 className="font-heading text-xl font-semibold mt-2 mb-3">{p.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
+                <div className="p-5 flex items-center justify-between">
+                  <h3 className="font-heading text-lg font-semibold">{p.title}</h3>
+                  <ExternalLink className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" size={18} />
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>
