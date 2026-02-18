@@ -58,6 +58,13 @@ const services = [
   },
 ];
 
+const processSteps = [
+  { step: "01", title: "Discovery", desc: "We learn about your business, goals, and target audience to create a clear strategy.", icon: "💡" },
+  { step: "02", title: "Design", desc: "Crafting a custom layout and visual identity that reflects your unique brand.", icon: "🎨" },
+  { step: "03", title: "Develop", desc: "Building a fast, responsive, and SEO-optimized website with clean code.", icon: "⚡" },
+  { step: "04", title: "Launch", desc: "Deploying your site, testing everything, and ensuring a flawless go-live.", icon: "🚀" },
+];
+
 const Services = () => {
   return (
     <Layout>
@@ -119,8 +126,60 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Process */}
+      <section className="section-padding bg-card relative overflow-hidden">
+        <div className="absolute inset-0 diagonal-lines opacity-30" />
+
+        <div className="container mx-auto relative z-10">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <motion.span variants={fadeUp} custom={0} className="text-xs font-bold tracking-[0.25em] uppercase text-primary mb-5 block">
+              Our Process
+            </motion.span>
+            <motion.h2 variants={fadeUp} custom={1} className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-5">
+              From Idea to <span className="text-gold-gradient">Launch</span>
+            </motion.h2>
+            <motion.div variants={fadeUp} custom={1} className="w-16 h-1 bg-gold-gradient rounded-full mx-auto mb-5" />
+            <motion.p variants={fadeUp} custom={2} className="text-muted-foreground max-w-xl mx-auto text-base md:text-lg">
+              A streamlined process designed to deliver exceptional results, on time and on budget.
+            </motion.p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {processSteps.map((p, i) => (
+              <motion.div
+                key={p.step}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={fadeUp}
+                custom={i}
+                className="relative text-center group"
+              >
+                {i < processSteps.length - 1 && (
+                  <div className="hidden lg:block absolute top-10 left-[60%] w-[80%] h-px bg-gradient-to-r from-primary/30 to-primary/5" />
+                )}
+
+                <div className="relative inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-background border border-border mb-6 group-hover:border-primary/40 transition-colors duration-300">
+                  <span className="text-3xl">{p.icon}</span>
+                  <div className="absolute -top-2 -right-2 w-7 h-7 rounded-full bg-gold-gradient flex items-center justify-center">
+                    <span className="text-[10px] font-bold text-primary-foreground">{p.step}</span>
+                  </div>
+                </div>
+                <h3 className="font-heading text-xl font-semibold mb-3">{p.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed max-w-[250px] mx-auto">{p.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="section-padding bg-card text-center">
+      <section className="section-padding bg-background text-center">
         <div className="container mx-auto max-w-2xl">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
             Need a <span className="text-gold-gradient">Custom Solution</span>?
