@@ -41,12 +41,12 @@ const Contact = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="section-padding bg-card">
+      <section className="py-12 md:py-20 px-4 md:px-8 lg:px-16 bg-card">
         <div className="container mx-auto text-center max-w-3xl">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-heading text-4xl md:text-5xl font-bold mb-6"
+            className="font-heading text-3xl md:text-5xl font-bold mb-4 md:mb-6"
           >
             Get in <span className="text-gold-gradient">Touch</span>
           </motion.h1>
@@ -54,16 +54,16 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-muted-foreground text-lg"
+            className="text-muted-foreground text-base md:text-lg"
           >
             Ready to take your business online or upgrade your current website? Let's talk about how we can help.
           </motion.p>
         </div>
       </section>
 
-      <section className="section-padding bg-background">
+      <section className="py-12 md:py-20 px-4 md:px-8 lg:px-16 bg-background">
         <div className="container mx-auto max-w-5xl">
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12">
             {/* Form */}
             <motion.div
               initial="hidden"
@@ -157,7 +157,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-medium text-sm">Email</p>
-                      <p className="text-muted-foreground text-sm">matthewcoetzee1234@gmail.com</p>
+                      <p className="text-muted-foreground text-sm break-all">matthewcoetzee1234@gmail.com</p>
                     </div>
                   </a>
                 </div>
