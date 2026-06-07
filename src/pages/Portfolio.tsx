@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
+import PageHero from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -16,7 +17,7 @@ const fadeUp = {
 const projects = [
   {
     title: "Free Rein Projects",
-    url: "https://free-rein-projects.netlify.app",
+    url: "https://freereinprojects.co.za",
   },
   {
     title: "Roots Fest Demo",
@@ -35,26 +36,16 @@ const projects = [
 const Portfolio = () => {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="section-padding bg-card">
-        <div className="container mx-auto text-center max-w-3xl">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="font-heading text-4xl md:text-5xl font-bold mb-6"
-          >
-            Our <span className="text-gold-gradient">Portfolio</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-muted-foreground text-lg"
-          >
-            A selection of projects showcasing the quality, versatility, and results-driven approach behind every website we build.
-          </motion.p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Our Work"
+        title={
+          <>
+            Our <span className="text-gold-shimmer">Portfolio</span>
+          </>
+        }
+        subtitle="A selection of projects showcasing the quality, versatility, and results-driven approach behind every website we build."
+      />
+
 
       {/* Projects */}
       <section className="section-padding bg-background">
