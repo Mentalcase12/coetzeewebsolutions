@@ -99,7 +99,7 @@ const About = () => {
               viewport={{ once: true }}
               variants={fadeUp}
               custom={0}
-              className="glass-card rounded-lg p-8"
+              className="gradient-card rounded-2xl p-8 border border-border card-hover hover:border-primary/40 hover:shadow-elegant"
             >
               <div className="bg-gold-gradient w-12 h-12 rounded-lg flex items-center justify-center mb-5">
                 <Target className="text-primary-foreground" size={24} />
