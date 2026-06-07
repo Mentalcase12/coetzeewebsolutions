@@ -91,7 +91,7 @@ const Services = () => {
               viewport={{ once: true, margin: "-50px" }}
               variants={fadeUp}
               custom={0}
-              className="glass-card rounded-lg p-8 md:p-10 hover:border-primary/50 transition-colors"
+              className="gradient-card rounded-2xl p-8 md:p-10 border border-border hover:border-primary/50 hover:shadow-elegant transition-all duration-500 shine"
             >
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="shrink-0">
