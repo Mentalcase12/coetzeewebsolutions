@@ -151,7 +151,7 @@ const About = () => {
                 viewport={{ once: true }}
                 variants={fadeUp}
                 custom={i}
-                className="flex items-center gap-4 glass-card rounded-lg p-5 text-left"
+                className="flex items-center gap-4 gradient-card border border-border rounded-xl p-5 text-left hover:border-primary/40 transition-colors"
               >
                 <CheckCircle className="text-primary shrink-0" size={20} />
                 <span className="text-foreground">{v}</span>
