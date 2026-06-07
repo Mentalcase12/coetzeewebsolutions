@@ -43,24 +43,16 @@ const testimonials = [
 const About = () => {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="section-padding bg-card">
-        <div className="container mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <motion.h1 variants={fadeUp} custom={0} className="font-heading text-4xl md:text-5xl font-bold mb-6">
-              About <span className="text-gold-gradient">Coetzee Web Solutions</span>
-            </motion.h1>
-            <motion.p variants={fadeUp} custom={1} className="text-muted-foreground text-lg leading-relaxed">
-              Founded by Matthew Coetzee, Coetzee Web Solutions is a professional web development business dedicated to helping businesses of all sizes build a strong, credible online presence.
-            </motion.p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Who We Are"
+        title={
+          <>
+            About <span className="text-gold-shimmer">Coetzee Web Solutions</span>
+          </>
+        }
+        subtitle="Founded by Matthew Coetzee, Coetzee Web Solutions is a professional web development business dedicated to helping businesses of all sizes build a strong, credible online presence."
+      />
+
 
       {/* Story */}
       <section className="section-padding bg-background">
