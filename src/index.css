@@ -46,8 +46,13 @@
     --sidebar-ring: 42 80% 55%;
 
     --gold-gradient: linear-gradient(135deg, hsl(42, 80%, 55%), hsl(38, 90%, 45%), hsl(45, 85%, 60%));
-    --gold-text-gradient: linear-gradient(135deg, hsl(42, 80%, 60%), hsl(38, 90%, 50%), hsl(45, 85%, 65%));
+    --gold-text-gradient: linear-gradient(135deg, hsl(45, 92%, 72%), hsl(42, 85%, 58%), hsl(38, 90%, 48%));
     --dark-overlay: linear-gradient(180deg, hsla(30, 10%, 8%, 0.9), hsla(30, 10%, 8%, 0.7));
+    --gradient-radial-glow: radial-gradient(circle at 50% 0%, hsl(42 80% 55% / 0.18), transparent 60%);
+    --gradient-card: linear-gradient(160deg, hsl(30 10% 14% / 0.9), hsl(30 12% 9% / 0.9));
+
+    --shadow-gold-lg: 0 30px 80px -25px hsl(42 80% 55% / 0.35);
+    --shadow-elegant: 0 24px 60px -20px hsl(30 30% 2% / 0.8);
 
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
@@ -119,5 +124,93 @@
       hsl(var(--border) / 0.15) 10px,
       hsl(var(--border) / 0.15) 11px
     );
+  }
+
+  .radial-glow {
+    background: var(--gradient-radial-glow);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .shadow-gold-lg {
+    box-shadow: var(--shadow-gold-lg);
+  }
+
+  .noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Animated gradient gold text shimmer */
+  .text-gold-shimmer {
+    background: linear-gradient(
+      100deg,
+      hsl(42 70% 45%) 20%,
+      hsl(48 95% 78%) 40%,
+      hsl(48 95% 78%) 50%,
+      hsl(42 70% 45%) 70%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShimmer 5s linear infinite;
+  }
+
+  @keyframes textShimmer {
+    to {
+      background-position: 200% center;
+    }
+  }
+
+  /* Shine sweep for buttons / cards on hover */
+  .shine {
+    position: relative;
+    overflow: hidden;
+  }
+  .shine::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      hsl(45 90% 80% / 0.35),
+      transparent
+    );
+    transform: skewX(-20deg);
+    transition: left 0.7s ease;
+  }
+  .shine:hover::after {
+    left: 150%;
+  }
+
+  /* Marquee */
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 hover:-translate-y-2;
   }
 }

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Code, Paintbrush, BarChart3, RefreshCw, Smartphone, Search, MessageSquare, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
+import PageHero from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -68,26 +69,16 @@ const processSteps = [
 const Services = () => {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="section-padding bg-card">
-        <div className="container mx-auto text-center max-w-3xl">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="font-heading text-4xl md:text-5xl font-bold mb-6"
-          >
-            Our <span className="text-gold-gradient">Services</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-muted-foreground text-lg"
-          >
-            Comprehensive web development services designed to help your business establish credibility, attract clients, and grow online.
-          </motion.p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="What We Offer"
+        title={
+          <>
+            Our <span className="text-gold-shimmer">Services</span>
+          </>
+        }
+        subtitle="Comprehensive web development services designed to help your business establish credibility, attract clients, and grow online."
+      />
+
 
       {/* Services */}
       <section className="section-padding bg-background">
@@ -100,7 +91,7 @@ const Services = () => {
               viewport={{ once: true, margin: "-50px" }}
               variants={fadeUp}
               custom={0}
-              className="glass-card rounded-lg p-8 md:p-10 hover:border-primary/50 transition-colors"
+              className="gradient-card rounded-2xl p-8 md:p-10 border border-border hover:border-primary/50 hover:shadow-elegant transition-all duration-500 shine"
             >
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="shrink-0">

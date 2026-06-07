@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
+import PageHero from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -16,7 +17,7 @@ const fadeUp = {
 const projects = [
   {
     title: "Free Rein Projects",
-    url: "https://free-rein-projects.netlify.app",
+    url: "https://freereinprojects.co.za",
   },
   {
     title: "Roots Fest Demo",
@@ -35,30 +36,21 @@ const projects = [
 const Portfolio = () => {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="section-padding bg-card">
-        <div className="container mx-auto text-center max-w-3xl">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="font-heading text-4xl md:text-5xl font-bold mb-6"
-          >
-            Our <span className="text-gold-gradient">Portfolio</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-muted-foreground text-lg"
-          >
-            A selection of projects showcasing the quality, versatility, and results-driven approach behind every website we build.
-          </motion.p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Our Work"
+        title={
+          <>
+            Our <span className="text-gold-shimmer">Portfolio</span>
+          </>
+        }
+        subtitle="A selection of projects showcasing the quality, versatility, and results-driven approach behind every website we build."
+      />
+
 
       {/* Projects */}
-      <section className="section-padding bg-background">
-        <div className="container mx-auto max-w-6xl">
+      <section className="section-padding bg-background relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
+        <div className="container mx-auto max-w-6xl relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((p, i) => (
               <motion.a
@@ -71,7 +63,7 @@ const Portfolio = () => {
                 viewport={{ once: true }}
                 variants={fadeUp}
                 custom={i}
-                className="glass-card rounded-lg overflow-hidden hover:border-primary/50 transition-all group block"
+                className="gradient-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 card-hover hover:shadow-gold-lg group block"
               >
                 {/* Live site preview */}
                 <div className="relative w-full aspect-[16/10] overflow-hidden bg-muted">
@@ -83,16 +75,23 @@ const Portfolio = () => {
                     loading="lazy"
                     sandbox="allow-scripts allow-same-origin"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <div className="p-5 flex items-center justify-between">
-                  <h3 className="font-heading text-lg font-semibold">{p.title}</h3>
-                  <ExternalLink className="text-primary opacity-0 group-hover:opacity-100 transition-opacity" size={18} />
+                <div className="p-6 flex items-center justify-between">
+                  <h3 className="font-heading text-lg font-semibold group-hover:text-primary transition-colors">
+                    {p.title}
+                  </h3>
+                  <ExternalLink
+                    className="text-primary opacity-0 group-hover:opacity-100 transition-opacity"
+                    size={18}
+                  />
                 </div>
               </motion.a>
             ))}
           </div>
         </div>
       </section>
+
 
       {/* More coming */}
       <section className="section-padding bg-card text-center">

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Target, Eye, CheckCircle, Quote, MessageSquare, Star } from "lucide-react";
 import Layout from "@/components/Layout";
+import PageHero from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
@@ -42,24 +43,16 @@ const testimonials = [
 const About = () => {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="section-padding bg-card">
-        <div className="container mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <motion.h1 variants={fadeUp} custom={0} className="font-heading text-4xl md:text-5xl font-bold mb-6">
-              About <span className="text-gold-gradient">Coetzee Web Solutions</span>
-            </motion.h1>
-            <motion.p variants={fadeUp} custom={1} className="text-muted-foreground text-lg leading-relaxed">
-              Founded by Matthew Coetzee, Coetzee Web Solutions is a professional web development business dedicated to helping businesses of all sizes build a strong, credible online presence.
-            </motion.p>
-          </motion.div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Who We Are"
+        title={
+          <>
+            About <span className="text-gold-shimmer">Coetzee Web Solutions</span>
+          </>
+        }
+        subtitle="Founded by Matthew Coetzee, Coetzee Web Solutions is a professional web development business dedicated to helping businesses of all sizes build a strong, credible online presence."
+      />
+
 
       {/* Story */}
       <section className="section-padding bg-background">
@@ -106,7 +99,7 @@ const About = () => {
               viewport={{ once: true }}
               variants={fadeUp}
               custom={0}
-              className="glass-card rounded-lg p-8"
+              className="gradient-card rounded-2xl p-8 border border-border card-hover hover:border-primary/40 hover:shadow-elegant"
             >
               <div className="bg-gold-gradient w-12 h-12 rounded-lg flex items-center justify-center mb-5">
                 <Target className="text-primary-foreground" size={24} />
@@ -122,7 +115,7 @@ const About = () => {
               viewport={{ once: true }}
               variants={fadeUp}
               custom={1}
-              className="glass-card rounded-lg p-8"
+              className="gradient-card rounded-2xl p-8 border border-border card-hover hover:border-primary/40 hover:shadow-elegant"
             >
               <div className="bg-gold-gradient w-12 h-12 rounded-lg flex items-center justify-center mb-5">
                 <Eye className="text-primary-foreground" size={24} />
@@ -158,7 +151,7 @@ const About = () => {
                 viewport={{ once: true }}
                 variants={fadeUp}
                 custom={i}
-                className="flex items-center gap-4 glass-card rounded-lg p-5 text-left"
+                className="flex items-center gap-4 gradient-card border border-border rounded-xl p-5 text-left hover:border-primary/40 transition-colors"
               >
                 <CheckCircle className="text-primary shrink-0" size={20} />
                 <span className="text-foreground">{v}</span>
