@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Target, Eye, CheckCircle, Quote, MessageSquare, Star } from "lucide-react";
 import Layout from "@/components/Layout";
+import PageHero from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
