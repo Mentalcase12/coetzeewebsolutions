@@ -41,26 +41,16 @@ const Contact = () => {
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="py-12 md:py-20 px-4 md:px-8 lg:px-16 bg-card">
-        <div className="container mx-auto text-center max-w-3xl">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="font-heading text-3xl md:text-5xl font-bold mb-4 md:mb-6"
-          >
-            Get in <span className="text-gold-gradient">Touch</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-muted-foreground text-base md:text-lg"
-          >
-            Ready to take your business online or upgrade your current website? Let's talk about how we can help.
-          </motion.p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Contact Us"
+        title={
+          <>
+            Get in <span className="text-gold-shimmer">Touch</span>
+          </>
+        }
+        subtitle="Ready to take your business online or upgrade your current website? Let's talk about how we can help."
+      />
+
 
       <section className="py-12 md:py-20 px-4 md:px-8 lg:px-16 bg-background">
         <div className="container mx-auto max-w-5xl">
