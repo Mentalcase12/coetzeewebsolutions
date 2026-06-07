@@ -69,26 +69,16 @@ const processSteps = [
 const Services = () => {
   return (
     <Layout>
-      {/* Hero */}
-      <section className="section-padding bg-card">
-        <div className="container mx-auto text-center max-w-3xl">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="font-heading text-4xl md:text-5xl font-bold mb-6"
-          >
-            Our <span className="text-gold-gradient">Services</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-muted-foreground text-lg"
-          >
-            Comprehensive web development services designed to help your business establish credibility, attract clients, and grow online.
-          </motion.p>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="What We Offer"
+        title={
+          <>
+            Our <span className="text-gold-shimmer">Services</span>
+          </>
+        }
+        subtitle="Comprehensive web development services designed to help your business establish credibility, attract clients, and grow online."
+      />
+
 
       {/* Services */}
       <section className="section-padding bg-background">
