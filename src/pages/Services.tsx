@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Code, Paintbrush, BarChart3, RefreshCw, Smartphone, Search, MessageSquare, ArrowRight } from "lucide-react";
 import Layout from "@/components/Layout";
+import PageHero from "@/components/PageHero";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
